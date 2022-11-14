@@ -1,12 +1,11 @@
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.junit.*;
-import org.testng.annotations.*;
-
-import static org.junit.Assert.assertEquals;
 
 public class FrontEndTestClass {
     private  static WebDriver driver;
@@ -31,15 +30,16 @@ public class FrontEndTestClass {
         //driver.manage().window().maximize();
         driver.get("https://www.demoblaze.com/index.html");
     }
-    @org.junit.Test
+    @Test
     public void CustomerNavigation() throws InterruptedException {
         //Permite ver la acción en el navegador emulado
         Thread.sleep(2000);
         //busca el elemento en la página
         phoneButton = driver.findElement(By.id("itemc"));
-//        Thread.sleep(7000);
-//        monitorButton = driver.findElement(By.linkText("/html/body/div[5]/div/div[1]/div/a[4]"));
-//        Thread.sleep(7000);
+        phoneButton.click();
+        Thread.sleep(2000);
+        monitorButton = driver.findElement(By.linkText("/html/body/div[5]/div/div[1]/div/a[4]"));
+        Thread.sleep(7000);
 //        laptopButton = driver.findElement(By.linkText("/html/body/div[5]/div/div[1]/div/a[3]"));
 //        Thread.sleep(7000);
 //        monitorButton = driver.findElement(By.linkText("/html/body/div[5]/div/div[1]/div/a[4]"));
